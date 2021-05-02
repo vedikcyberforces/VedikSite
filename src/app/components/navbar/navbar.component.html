@@ -42,12 +42,17 @@
         <a href="about" class="navbar-item">About</a>
       </div>
    
-      <div class="navbar-end">
+      <div class="navbar-end" *ngIf="!isLogin">
           <div class="buttons has-addons mx-2">
               <a href="login" class="button is-rounded ">Login</a>
               <a href="join" class="button is-warning is-rounded">Join Now</a>
           </div>
       </div>
+      <div class="navbar-end" *ngIf="isLogin">
+        <div class="buttons has-addons mx-2">
+            <a href="login" class="button is-rounded ">Profile</a>
+        </div>
+    </div>
     </div>
   </nav>
   
