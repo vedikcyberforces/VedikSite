@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+#heading{
+    font-family:'Audiowide', cursive;
+}
+#info{
+    font-family: 'Ubuntu', sans-serif;
+}
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
