@@ -1,5 +1,58 @@
-<nav class="navbar">
-    <div class="navbar-left">
-        <div class="navbar-item"></div>
+<nav class="navbar is-light">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/src/index.html">
+        <img src="assets/vcfnamegood.png" alt="VCF Logo" width="70"
+          height="28">
+      </a>
+      <div class="navbar-burger" [class.is-active]="isActive" (click)="isActive = !isActive"
+        data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-</nav>
+  
+    <div id="navbarExampleTransparentExample" class="navbar-menu" [class.is-active]="isActive">
+      <div class="navbar-start">
+        <a class="navbar-item" href="home">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Explore</a>
+  
+          <div class="navbar-dropdown">
+            <a href="members" class="navbar-item">
+              Members
+            </a>
+            <a href="posts" class="navbar-item">
+              Posts
+            </a>
+            <a href="projects" class="navbar-item">
+              Our Projects
+            </a>
+            <a href="art" class="navbar-item">
+              Art Work</a>
+            <hr class="navbar-devider">
+            <a href="forum" class="navbar-item m-0">
+              Forum
+            </a>
+          </div>
+        </div>
+        <a href="openroom" class="navbar-item">Open Room</a>
+        <a href="about" class="navbar-item">About</a>
+      </div>
+   
+      <div class="navbar-end" *ngIf="!isLogin">
+          <div class="buttons has-addons mx-2">
+              <a href="login" class="button is-rounded ">Login</a>
+              <a href="join" class="button is-warning is-rounded">Join Now</a>
+          </div>
+      </div>
+      <div class="navbar-end" *ngIf="isLogin">
+        <div class="buttons has-addons mx-2">
+            <a href="login" class="button is-rounded ">Profile</a>
+        </div>
+    </div>
+    </div>
+  </nav>
+  
