@@ -1,27 +1,43 @@
-# VedikSite
+# VCF Website #VedikSite
+## The Official VCF Website For Community
+********
+### Developers
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+| S.N. | Name | Git |
+|:----:|:-----:|:-----:|
+|1       | Himanshu Jangid       | <a href="https://github.com/himanshurajora">Click Here</a> |
+| 2     |   Ankit Choudhary     |   <a href="https://github.com/ankit1509">Click Here</a> 
 
-## Development server
+-----------
+Made with <a href="https://en.wikipedia.org/wiki/MEAN_(solution_stack)">MEAN</a> stack 
+****************
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+We Would Love Your Contribution In VCF Or In The Project In Any way You Can:
 
-## Code scaffolding
+## How Can You Contribute To Just The Project?
+### There are 4 ways to contribute
+#### 1. Contribute To Code
+There are two ways to do it
+1. <a href="https://www.dataschool.io/how-to-contribute-on-github/">Read this</a>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Join VCF <br>
+You join VCF you need to mail us on admin@vcfstudio.in / vedikcyberforces@gmail.com
+or Just what's app us <a href="https://wa.me/6377915209?text=Hey, I'm Interested In Joining The VCF Community">Click Here</a>
+***
+### 2. Raise Issues
+1. <a href="https://docs.github.com/en/github/managing-your-work-on-github/creating-an-issue">Read This</a>
+***
+### 3. Give Feedback
+1. You Can <a href="mailto:vedikcyberforces@gmail.com">Mail Us Here</a>
+***
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+How Can You Contribute To VCF Totally?
+1. Join VCF
+Join VCF <br>
+You join VCF you need to mail us on vedikcyberforces@gmail.com
+or Just what's app us <a href="https://wa.me/6377915209?text=Hey, I'm Interested In Joining The VCF Community">Click Here</a>
+***
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## We Would Love 🙂 If You Join VCF
