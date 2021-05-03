@@ -11,3 +11,11 @@
 *{
     font-family: 'Ubuntu', sans-serif;
 }
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.padding-0{
+    padding: 0;
+}

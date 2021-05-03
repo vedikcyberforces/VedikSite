@@ -1,32 +1,53 @@
-<section class="hero is-large">
-  <div class="hero-body" style="padding-top: 1rem;">
-    <div class="container py-5">
+<section class="hero">
+  <div class="hero-body" style="padding-top: 3rem;">
+    <div class="container">
       <div class="columns notification box is-vcentered has-text-weight-bold">
         <div class="column is-6">
           <div class="media">
-              <div class="media-left">
-                  <figure class="image is-64x64">
-                      <img src="assets/vcf.png" alt="">
-                  </figure>
+            <div class="columns">
+              <div class="column">
+                <figure class="image is-64x64 center">
+                  <img src="assets/vcf.png" alt="">
+                </figure>
               </div>
-              <div class="media-content">
-                <p class="title py-5 px-5 has-text-centered" id="heading">Vedik Cyber Forces 
-                </p>
-              </div>
+              <div class="column is-11"> <p class="title py-5 has-text-centered" id="heading">Vedik Cyber Forces</p></div>
+            </div>
+
           </div>
-          <p class="subtitle py-5" id="info">Welcome To The Official Website Of VCF Community. Forum, Posts, Content Share We Got Everything Covered Here</p>
+          <p class="subtitle py-5" id="info">Welcome To The Official Website Of VCF Community. Forum, Posts, Content
+            Share We Got Everything Covered Here</p>
         </div>
         <div class="column is-5 has-text-centered">
-            <div id="grid" >
-                <div id="a" class="my-6">
-                    <button class="button is-large is-success is-light is-outlined is-rounded ">Know About US</button>
-                </div>
-                <div id="b" class="my-6">
-                    <button class="button is-large  is-warning is-light is-outlined is-rounded ">Join US</button>
-                </div>
+          <div id="grid">
+            <div id="a" class="my-6">
+              <button class="button is-large is-success is-light is-outlined is-rounded ">Know About US</button>
             </div>
+            <div id="b" class="my-6">
+              <button class="button is-large  is-warning is-light is-outlined is-rounded ">Join US</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+<section class="section">
+  <app-news></app-news>
+</section>
+
+<section class="section">
+  <app-member></app-member>
+</section>
+
+<section class="section">
+  <app-contributor></app-contributor>
+</section>
+
+
+<footer class="footer" style="background-color: rgb(37, 37, 37);">
+  <div class="content has-text-centered">
+    <p class="title is-5 has-text-light heading">Vedik Cyber Forces</p>
+  </div>
+</footer>
