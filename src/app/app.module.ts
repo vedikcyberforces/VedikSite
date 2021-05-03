@@ -9,6 +9,8 @@ import { MemberComponent } from './components/member/member.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewsComponent } from './components/news/news.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NewsComponent } from './components/news/news.component';
     NavbarComponent,
     HomeComponent,
     ContributorComponent,
-    NewsComponent
+    NewsComponent,
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
