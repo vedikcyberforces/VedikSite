@@ -14,8 +14,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JoinComponent } from './components/join/join.component';
-import { JoinrequestComponent } from './components/joinrequest/joinrequest.component';
 import { FormsModule } from '@angular/forms';
+import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     AboutComponent,
     JoinComponent,
-    JoinrequestComponent
+    JoinrequestsComponent
   ],
   imports: [
     BrowserModule,
