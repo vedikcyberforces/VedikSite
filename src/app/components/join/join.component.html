@@ -8,11 +8,11 @@
                 <p class="title" style="margin: 5px;">Join Us</p>
                 <p>Create Your Vedik Account</p>
             </div>
-            <form>
+            <form #joinForm="ngForm" (ngSubmit)="onJoin(joinForm.value)">
                 <div class="field is-horizontal columns is-desktop" id="name">
                     <div class="field column is-6 name">
                         <p class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" type="text" placeholder="First Name" required>
+                            <input class="input is-rounded" name="firstname" ngModel type="text" placeholder="First Name" required>
                             <span class="icon is-small is-left">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                             </span>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="field column is-6 name">
                         <p class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" type="text" placeholder="Last Name" required>
+                            <input class="input is-rounded" type="text" name="lastname" ngModel placeholder="Last Name" required>
                             <span class="icon is-small is-left">
                                 <i class="fa fa-user"></i>
                             </span>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input is-rounded" type="email" placeholder="E-mail" required>
+                        <input class="input is-rounded" type="email" name="email" ngModel placeholder="E-mail" required>
                         <span class="icon is-small is-left">
                             <i class="fa fa-envelope"></i>
                         </span>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input is-rounded" type="text" placeholder="Mobile Number" required>
+                        <input class="input is-rounded" type="text" name="phone" ngModel placeholder="Mobile Number" required>
                         <span class="icon is-small is-left">
                             <i class="fa fa-phone"></i>
                         </span>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input is-rounded" type="text" placeholder="GitHub Link(GitHub Usernames)" required>
+                        <input class="input is-rounded" type="text" name="username" ngModel placeholder="GitHub Username (Not Email Or Link)" required>
                         <span class="icon is-small is-left">
                             <i class="fa fa-github"></i>
                         </span>
@@ -54,14 +54,14 @@
                 <div class="field ml-1">
                     <div class="control">
                         <label class="checkbox is-medium">
-                            <input type="checkbox">
+                            <input type="checkbox" name="terms" ngModel required>
                             I Accept all <a href="#">Terms and conditions</a>
                         </label>
                     </div>
                 </div>
                 <div class="field has-text-centered">
                     <p class="control">
-                        <button class="button is-rounded is-fullwidth is-warning is-6">
+                        <button type="submit" class="button is-rounded is-fullwidth is-warning is-6">
                             Join Now
                         </button>
                     </p>
