@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import { NewsService } from 'src/app/services/news.service';
 
 @Component({
@@ -33,13 +34,8 @@ export class NewsComponent implements OnInit {
     }
     return false;
   }
-  constructor(private newsService: NewsService) { }
+  constructor(private API:ApiService) { }
   ngOnInit(): void {
-    this.newsService.getNewses().then((newses) => {
-      this.newses = newses
-      this.numberofSlides = Object.keys(this.newses).length
-      console.log(this.newses)
-    })
-    
+    this.API.getData("/api/news", "").then((value)=>this.newses = value)
   }
 }

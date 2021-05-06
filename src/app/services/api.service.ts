@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,14 +6,23 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
+  constructor(private http: HttpClient) { }
+
   baseUrl = "http://localhost:3000"
 
-  getBaseUrl(route:String){ 
-    if(route){
+  getBaseUrl(route: String) {
+    if (route) {
       return this.baseUrl + route;
     }
     return this.baseUrl
   }
 
-  constructor() { }
+  async postForm(route: String, data: Object) {
+
+    return await this.http.post(this.getBaseUrl(route), data).toPromise();
+  }
+  async getData(route: String, token:Object) {
+    return await this.http.get(this.getBaseUrl(route)).toPromise();
+  }
+
 }

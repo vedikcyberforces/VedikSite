@@ -7,9 +7,6 @@ import { ApiService } from './api.service';
 })
 export class NewsService {
 
-  constructor(private api: ApiService, private http: HttpClient) { }
-
-  async getNewses() {
-    return await this.http.get(this.api.getBaseUrl("/api/news")).toPromise();
-  }
+  constructor(private api: ApiService) { }
+  
 }
