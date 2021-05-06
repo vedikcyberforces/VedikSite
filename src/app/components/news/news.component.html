@@ -1,25 +1,27 @@
-<div class="media notification is-success is-light" style="margin-bottom: 0;">
-  <div class="media-left"><button class="button"><span><i class="fa fa-arrow-left"
-          aria-hidden="true"></i></span></button></div>
+<div class="media notification is-success is-light" style="margin-bottom: 0;" *ngIf="newses;">
+  <div class="media-left"><button class="button" (click)="loadPreviousSlide()"><span><i
+          class="fa fa-arrow-left" aria-hidden="true"></i></span></button></div>
   <div class="media-content has-text-centered">
     <p class="title"><u>News </u></p>
   </div>
-  <div class="media-right"><button class="button"><span><i class="fa fa-arrow-right"
-          aria-hidden="true"></i></span></button></div>
+  <div class="media-right"><button class="button" (click)="loadNextSlide()"><span><i
+          class="fa fa-arrow-right" aria-hidden="true"></i></span></button></div>
 </div>
 <div class="box has-text-centered">
-  <div class="columns">
-    <div class="column is-4 is-vcentered" style="height: 200px;">
-      <figure class="image is-128x128" style="margin: auto auto;">
-        <img src="assets/vcf.png" alt="">
-      </figure>
-    </div>
-    <div class="column is-8">
-      <p class="subtitle is-3" style="line-height: 1.5;
-      display: inline-block;
-      vertical-align: middle;">
-        This website is currently in Rapid Development Phase
-      </p>
+  <div *ngFor="let news of newses; let i = index">
+    <div class="columns" *ngIf="isVisible(i)">
+      <div class="column is-4 is-vcentered" style="height: 200px;">
+        <figure class="image is-128x128" style="margin: auto auto;">
+          <img src="assets/vcf.png" alt="">
+        </figure>
+      </div>
+      <div class="column is-8">
+        <p class="subtitle is-3" style="line-height: 1.5;
+        display: inline-block;
+        vertical-align: middle;">
+          {{news.news}} id = {{i}}
+        </p>
+      </div>
     </div>
   </div>
 </div>
