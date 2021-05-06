@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-joinrequests',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinrequestsComponent implements OnInit {
 
-  constructor() { }
+  requests:any
+  constructor(private API:ApiService) {}
 
   ngOnInit(): void {
+    this.API.getData("/auth/join","").then((value)=>this.requests = value)
   }
 
 }
