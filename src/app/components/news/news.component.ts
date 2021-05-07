@@ -13,6 +13,7 @@ export class NewsComponent implements OnInit {
   currentSlide = 0;
   numberofSlides:any
   loadNextSlide(){
+    console.log(this.currentSlide)
     if(this.currentSlide < this.numberofSlides-1){
       this.currentSlide++;
     }
@@ -21,6 +22,7 @@ export class NewsComponent implements OnInit {
     }
   }
   loadPreviousSlide(){
+    console.log(this.currentSlide)
     if(this.currentSlide > 0){
       this.currentSlide--;
     }
@@ -36,6 +38,9 @@ export class NewsComponent implements OnInit {
   }
   constructor(private API:ApiService) { }
   ngOnInit(): void {
-    this.API.getData("/api/news", "").then((value)=>this.newses = value)
+    this.API.getData("/api/news","").then((value)=> {
+      this.newses = value;
+      this.numberofSlides = this.newses.length;
+    })
   }
 }
