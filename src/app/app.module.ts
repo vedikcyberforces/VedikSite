@@ -19,6 +19,8 @@ import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joi
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ALLProjectsComponent } from './components/allprojects/allprojects.component';
 import { WebProjectsComponent } from './components/web-projects/web-projects.component';
+import { MobileComponent } from './components/mobile/mobile.component';
+import { DesktopComponent } from './components/desktop/desktop.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { WebProjectsComponent } from './components/web-projects/web-projects.com
     JoinrequestsComponent,
     ProjectsComponent,
     ALLProjectsComponent,
-    WebProjectsComponent
+    WebProjectsComponent,
+    MobileComponent,
+    DesktopComponent
   ],
   imports: [
     BrowserModule,
