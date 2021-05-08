@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JoinComponent } from './components/join/join.component';
 import { FormsModule } from '@angular/forms';
 import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joi
     LoginComponent,
     AboutComponent,
     JoinComponent,
-    JoinrequestsComponent
+    JoinrequestsComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
