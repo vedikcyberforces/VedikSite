@@ -38,9 +38,9 @@ export class NewsComponent implements OnInit {
   }
   constructor(private API:ApiService) { }
   ngOnInit(): void {
-    this.API.getData("/api/news","").then((value)=> {
+    this.API.getData("/api/news").then((value)=> {
       this.newses = value;
       this.numberofSlides = this.newses.length;
-    })
+    }) 
   }
 }

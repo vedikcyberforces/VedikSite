@@ -12,7 +12,7 @@ export class JoinrequestsComponent implements OnInit {
   constructor(private API:ApiService) {}
 
   ngOnInit(): void {
-    this.API.getData("/auth/join","").then((value)=>this.requests = value)
+    this.API.getData("/auth/join").then((value)=>this.requests = value)
   }
 
 }
