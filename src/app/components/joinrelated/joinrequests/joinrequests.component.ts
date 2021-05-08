@@ -8,11 +8,33 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class JoinrequestsComponent implements OnInit {
 
-  requests:any
-  constructor(private API:ApiService) {}
+  requests: any
+  isInfoActive: any
+  currentRequest = {
+    "firstname": "",
+    "lastname": "",
+    "username": "",
+    "email": "",
+    "phone": "",
+    "id": ""
+  }
+  constructor(private API: ApiService) { }
 
   ngOnInit(): void {
-    this.API.getData("/auth/join").then((value)=>this.requests = value)
+    this.API.getData("/auth/join").then((value) => this.requests = value)
   }
+  toggler() {
+    this.isInfoActive = !this.isInfoActive;
+  }
+  openModal(request: any) {
+    console.log(request)
+    this.currentRequest = request
+    this.toggler();
+  }
+  Accept(id:string){
 
+  }
+  Reject(id:string){
+    
+  }
 }
