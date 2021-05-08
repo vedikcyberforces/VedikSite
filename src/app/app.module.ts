@@ -17,6 +17,7 @@ import { JoinComponent } from './components/join/join.component';
 import { FormsModule } from '@angular/forms';
 import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ALLProjectsComponent } from './components/allprojects/allprojects.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     AboutComponent,
     JoinComponent,
     JoinrequestsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ALLProjectsComponent
   ],
   imports: [
     BrowserModule,
