@@ -11,22 +11,41 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   isModalActive = false;
   isLogin = false;
+  isWrongActive = false;
   constructor(private AUTH: AuthService, private router: Router) {
-    AUTH.isLoggedIn().then((val) => {
+    this.AUTH.isLoggedIn().then((val) => {
       if (val) {
         this.isModalActive = true
         this.isLogin = true;
       }
     })
   }
-  Login(data: any) {
-    this.AUTH.Login(data)
-    this.isModalActive = true;
+async  Login(data: any) {
+    this.AUTH.Login(data).then(()=>{
+      this.AUTH.isLoggedIn().then((val)=>{
+        if(val){
+          this.isModalActive = true;
+          location.reload()
+        }
+        else{
+          this.isWrongActive = true
+        }
+      })
+    })
+    
   }
-  LogOut(){
-    console.log("run");
-    localStorage.removeItem("token");
-    window.location.href = "/";
+  LogOut() {
+    this.AUTH.LogOut()
+  }
+
+  //toggels the you are logged in moodal
+  toggler() {
+    this.isModalActive = !this.isModalActive;
+  }
+
+  //Toggles the wrong Id or password modal
+  togglerWrong() {
+    this.isWrongActive = !this.isWrongActive;
   }
   ngOnInit(): void {
   }

@@ -53,21 +53,36 @@
         </div>
       </div>
       <div class="section container is-fluid has-text-centered" *ngIf="isLogin">
-        <button class="button is-danger is-large" (onclick)="LogOut()">LogOut</button>
+        <button class="button is-danger is-large" role="button" (click)="LogOut()">LogOut</button>
       </div>
       <div class="modal" [ngClass]="{ 'is-active' : isModalActive}">
-        <div class="modal-background" (click)="isModalActive = !isModalActive"></div>
+        <div class="modal-background" (click)="toggler()"></div>
         <div class="modal-card">
           <header class="modal-card-head">
             <p class="modal-card-title">Notification</p>
-            <button class="delete" aria-label="close" (click)="isModalActive = !isModalActive"></button>
+            <button class="delete" aria-label="close" (click)="toggler()"></button>
           </header>
           <section class="modal-card-body">
             You are Logged In Go To Home Page or LogOut
           </section>
           <footer class="modal-card-foot">
             <a class="button is-success" href="home">Home Page</a>
-            <a class="button" (click)="isModalActive = !isModalActive">Cancel</a>
+            <a class="button" (click)="toggler()">Cancel</a>
+          </footer>
+        </div>
+      </div>
+      <div class="modal" [ngClass]="{ 'is-active' : isWrongActive}">
+        <div class="modal-background" (click)="togglerWrong()"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Notification</p>
+            <button class="delete" aria-label="close" (click)="togglerWrong()"></button>
+          </header>
+          <section class="modal-card-body has-text-centered">
+            Wrong Username Or Password
+          </section>
+          <footer class="has-text-centered notification">
+            <a class="button is-danger" (click)="togglerWrong()">Retry</a>
           </footer>
         </div>
       </div>

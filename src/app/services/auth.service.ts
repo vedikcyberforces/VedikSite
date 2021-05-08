@@ -20,14 +20,14 @@ export class AuthService {
       return this.logged;
     }
     else {
-      return false;
+      console.log("token not found too early")
     }
   }
 
   //Login Function
-  Login(data: any) {
+  async Login(data: any){
     //postForm returns a token that we can store in the localstorage for further authentication use
-    this.API.postForm("/auth/login", data).then((val) => {
+    await this.API.postForm("/auth/login", data).then((val) => {
       if (Object.create(val).status) {
         localStorage.setItem("token", Object.create(val).status)
       }
@@ -38,7 +38,8 @@ export class AuthService {
   }
 
   LogOut(){
-    localStorage.removeItem("token");
+    localStorage.clear()
+    location.reload()
   }
 
 }
