@@ -1,0 +1,40 @@
+<section class="hero">
+    <div class="hero-body" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="columns is-centered is-vcentered has-text-weight-bold is-multiline">
+
+                <!--- Projects tab or Projects Category  --->
+                <div class="tabs is-centered is-toggle is-toggle-rounded">
+                    <ul>
+                        <li [class.is-active]="isALL" (click)="isActive('ALL')">
+                            <a href="#">
+                                <span class="icon is-small"><i class="fa fa-microchip" aria-hidden="true"></i></span>
+                                <span>ALL</span>
+                            </a>
+                        </li>
+                        <li [class.is-active]="isWeb" (click)="isActive('Web')">
+                            <a href="#">
+                                <span class="icon is-small"><i class="fa fa-snowflake-o" aria-hidden="true"></i></span>
+                                <span>Web Application</span>
+                            </a>
+                        </li>
+                        <li [class.is-active]="isDesktop" (click)="isActive('Desktop')">
+                            <a href="#">
+                                <span class="icon is-small"><i class="fa fa-desktop" aria-hidden="true"></i></span>
+                                <span>Desktop Application</span>
+                            </a>
+                        </li>
+                        <li [class.is-active]="isMobile" (click)="isActive('Mobile')">
+                            <a href ="#">
+                                <span class="icon is-small"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                                <span>Mobile Application</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--- End Projects tab --->
+
+            </div>
+        </div>
+    </div>
+</section>
