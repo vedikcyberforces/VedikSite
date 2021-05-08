@@ -13,19 +13,19 @@
                             </a>
                         </li>
                         <li [class.is-active]="isWeb" (click)="isActive('Web')">
-                            <a href="#">
+                            <a>
                                 <span class="icon is-small"><i class="fa fa-snowflake-o" aria-hidden="true"></i></span>
                                 <span>Web Application</span>
                             </a>
                         </li>
                         <li [class.is-active]="isDesktop" (click)="isActive('Desktop')">
-                            <a href="#">
+                            <a>
                                 <span class="icon is-small"><i class="fa fa-desktop" aria-hidden="true"></i></span>
                                 <span>Desktop Application</span>
                             </a>
                         </li>
                         <li [class.is-active]="isMobile" (click)="isActive('Mobile')">
-                            <a href="#">
+                            <a>
                                 <span class="icon is-small"><i class="fa fa-mobile" aria-hidden="true"></i></span>
                                 <span>Mobile Application</span>
                             </a>
@@ -37,6 +37,15 @@
             </div>
             <div class="columns is-centered my-6">
                 <div *ngIf='isALL'>
+                    <app-allprojects></app-allprojects>
+                </div>
+                <div *ngIf='isWeb'>
+                    <app-web-projects></app-web-projects>
+                </div>
+                <div *ngIf='isDesktop'>
+                    <app-allprojects></app-allprojects>
+                </div>
+                <div *ngIf='isMobile'>
                     <app-allprojects></app-allprojects>
                 </div>
             </div>

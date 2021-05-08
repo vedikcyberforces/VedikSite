@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ALLProjectsComponent } from './components/allprojects/allprojects.component';
+import { WebProjectsComponent } from './components/web-projects/web-projects.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ALLProjectsComponent } from './components/allprojects/allprojects.compo
     JoinComponent,
     JoinrequestsComponent,
     ProjectsComponent,
-    ALLProjectsComponent
+    ALLProjectsComponent,
+    WebProjectsComponent
   ],
   imports: [
     BrowserModule,
