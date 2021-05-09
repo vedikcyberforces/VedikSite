@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { JoinComponent } from './components/join/join.component';
 import { FormsModule } from '@angular/forms';
 import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
-import { JoininfomodalComponent } from './components/joinrelated/joininfomodal/joininfomodal.component';
 
 
 @NgModule({
@@ -32,7 +31,6 @@ import { JoininfomodalComponent } from './components/joinrelated/joininfomodal/j
     AboutComponent,
     JoinComponent,
     JoinrequestsComponent,
-    JoininfomodalComponent
   ],
   imports: [
     BrowserModule,
@@ -44,3 +42,4 @@ import { JoininfomodalComponent } from './components/joinrelated/joininfomodal/j
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 
