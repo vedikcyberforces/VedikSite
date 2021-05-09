@@ -1,76 +1,110 @@
 <div class="container is-light">
-    <div id="join" class="my-6 px-6 notification is-white container column is-mobile is-half is-center">
-        <div class="content">
-            <div class="content has-text-centered">
-                <figure class="image is-32x32" style="margin: auto auto;">
-                    <img src="assets/vcf.png" alt="">
-                </figure>
-                <p class="title" style="margin: 5px;">Join Us</p>
-                <p>Create Your Vedik Account</p>
-            </div>
-            <form #joinForm="ngForm" (ngSubmit)="onJoin(joinForm.value)">
-                <div class="field is-horizontal columns is-desktop" id="name">
-                    <div class="field column is-6 name">
-                        <p class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" name="firstname" ngModel type="text" placeholder="First Name" required>
-                            <span class="icon is-small is-left">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="field column is-6 name">
-                        <p class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" type="text" name="lastname" ngModel placeholder="Last Name" required>
-                            <span class="icon is-small is-left">
-                                <i class="fa fa-user"></i>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div class="field">
-                    <p class="control has-icons-left">
-                        <input class="input is-rounded" type="email" name="email" ngModel placeholder="E-mail" required>
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-envelope"></i>
-                        </span>
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control has-icons-left">
-                        <input class="input is-rounded" type="text" name="phone" ngModel placeholder="Mobile Number" required>
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control has-icons-left">
-                        <input class="input is-rounded" type="text" name="username" ngModel placeholder="GitHub Username (Not Email Or Link)" required>
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-github"></i>
-                        </span>
-                    </p>
-                </div>
-                <div class="field ml-1">
-                    <div class="control">
-                        <label class="checkbox is-medium">
-                            <input type="checkbox" name="terms" ngModel required>
-                            I Accept all <a href="#">Terms and conditions</a>
-                        </label>
-                    </div>
-                </div>
-                <div class="field has-text-centered">
-                    <p class="control">
-                        <button type="submit" class="button is-rounded is-fullwidth is-warning is-6">
-                            Join Now
-                        </button>
-                    </p>
-                </div>
-            </form>
+  <div id="join" class="my-6 px-6 notification is-white container column is-mobile is-half is-center">
+    <div class="content" *ngIf="!islogged">
+      <div class="content has-text-centered">
+        <figure class="image is-32x32" style="margin: auto auto;">
+          <img src="assets/vcf.png" alt="">
+        </figure>
+        <p class="title" style="margin: 5px;">Join Us</p>
+        <p>Create Your Vedik Account</p>
+      </div>
+      <form #joinForm="ngForm" (ngSubmit)="onJoin(joinForm.value)">
+        <div class="field is-horizontal columns is-desktop" id="name">
+          <div class="field column is-6 name">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input is-rounded" name="firstname" ngModel type="text" placeholder="First Name" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field column is-6 name">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input is-rounded" type="text" name="lastname" ngModel placeholder="Last Name" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </p>
+          </div>
         </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="email" name="email" ngModel placeholder="E-mail" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="text" name="phone" ngModel placeholder="Mobile Number" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-phone"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="text" name="username" ngModel
+              placeholder="GitHub Username (Eg. example123, user541 etc.)" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-github"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field ml-1">
+          <div class="control">
+            <label class="checkbox is-medium">
+              <input type="checkbox" name="terms" ngModel required>
+              I Accept all <a href="#">Terms and conditions</a>
+            </label>
+          </div>
+        </div>
+        <div class="field has-text-centered">
+          <p class="control">
+            <button type="submit" class="button is-rounded is-fullwidth is-warning is-6" [ngClass]="{'is-loading': isJoining}">
+              Join Now
+            </button>
+          </p>
+        </div>
+      </form>
     </div>
-
+    <div class="container has-text-centered" *ngIf="islogged">
+        <p class="title is-3">You Have Already Joined</p>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="{ 'is-active' : isErrorActive}">
+    <div class="modal-background" (click)="toggler()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head has-background-warning">
+        <p class="modal-card-title">Error</p>
+        <button class="delete" aria-label="close" (click)="toggler()"></button>
+      </header>
+      <section class="modal-card-body">
+        Fill All the Details Correctly
+      </section>
+      <footer class="notification has-text-centered is-white">
+        <a class="button is-danger" (click)="toggler()"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+      </footer>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="{'is-active' : isSuccessActive}">
+    <a class="modal-background" href="home"></a>
+    <div class="modal-card">
+      <header class="modal-card-head has-background-success">
+        <p class="modal-card-title">Success</p>
+        <a class="delete" aria-label="close" href="home"></a>
+      </header>
+      <section class="modal-card-body">
+        <p class="title is-3">Successfully Sent The Joining Request</p>
+        <p class="subtitle is-4">Note: You Will Get Your Username and Password via Mail and Message Withing 24Hrs after Verification</p>
+      </section>
+      <footer class="notification has-text-centered is-white">
+        <a class="button is-success" href="home"><i class="fa fa-check" aria-hidden="true"></i></a>
+      </footer>
+    </div>
+  </div>
 </div>
 <section>
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </section>

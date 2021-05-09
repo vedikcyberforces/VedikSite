@@ -11,11 +11,48 @@
       <div class="column is-4">{{request.phone}}</div>
       <div class="column is-4">
         <div class="buttons has-addons">
-          <button class="button is-small is-success"><i class="fa fa-check-circle" aria-hidden="true"></i></button>
-          <button class="button is-small is-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
-          <button class="button is-small  is-warning"><i class="fa fa-info" aria-hidden="true"></i></button>
+          <button class="button is-small is-success" (click)="Accept(request._id)"><i class="fa fa-check-circle"
+              aria-hidden="true"></i></button>
+          <button class="button is-small is-danger" (click)="Reject(request._id)"><i class="fa fa-times"
+              aria-hidden="true"></i></button>
+          <button class="button is-small  is-warning" (click)="openModal(request)"><i class="fa fa-info"
+              aria-hidden="true"></i></button>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="{ 'is-active' : isInfoActive}">
+    <div class="modal-background" (click)="toggler()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title"> Request Info</p>
+        <button class="delete" aria-label="close" (click)="toggler()"></button>
+      </header>
+      <section class="modal-card-body">
+        <p class="title is-4">{{currentRequest.firstname | titlecase}} {{currentRequest.lastname | titlecase}}</p>
+        <p class="subtitle is-4">{{currentRequest._id}}</p>
+        <p class="subtitle is-4">{{currentRequest.email}}</p>
+        <p class="subtitle is-4">{{currentRequest.phone}}</p>
+        <p class="subtitle is-4">{{currentRequest.username}}</p>
+        <p class="subtitle is-4">{{currentRequest.time}}</p>
+      </section>
+      <div class="notification has-text-centered">
+        <div class="buttons has-addons">
+          <a class="button is-success" (click)="Accept(currentRequest._id)">Accept</a>
+          <a class="button is-warning" (click)="toggler()">Close Info</a>
+          <a class="button is-danger" (click)="Reject(currentRequest._id)">Reject</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="{ 'is-active' : isLoadingActive}">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+
+      <section class="modal-card-body has-text-centered" style="background-color: transparent;">
+        <button class="button is-large is-transparent is-loading">Text</button>
+      </section>
+
     </div>
   </div>
 </div>
