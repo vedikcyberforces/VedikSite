@@ -14,6 +14,8 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // Project Tab Activation and Deactivation
   isActive(tab : string){
     if(tab == 'ALL') {
       this.isALL = true;
