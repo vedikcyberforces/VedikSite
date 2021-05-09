@@ -8,8 +8,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:3000"
-  //baseUrl = "https://outstanding-delightful-touch.glitch.me"
+  //private baseUrl = "http://localhost:3000"
+  baseUrl = "https://outstanding-delightful-touch.glitch.me"
 
   private getBaseUrl(route: String) {
     if (route) {
