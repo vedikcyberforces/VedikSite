@@ -11,36 +11,36 @@ export class NewsComponent implements OnInit {
 
   newses: any
   currentSlide = 0;
-  numberofSlides:any
-  loadNextSlide(){
-    console.log(this.currentSlide)
-    if(this.currentSlide < this.numberofSlides-1){
+  numberofSlides: any
+  loadNextSlide() {
+
+    if (this.currentSlide < this.numberofSlides - 1) {
       this.currentSlide++;
     }
-    else{
+    else {
       this.currentSlide = 0;
     }
   }
-  loadPreviousSlide(){
-    console.log(this.currentSlide)
-    if(this.currentSlide > 0){
+  loadPreviousSlide() {
+
+    if (this.currentSlide > 0) {
       this.currentSlide--;
     }
-    else{
-      this.currentSlide = this.numberofSlides -1;
+    else {
+      this.currentSlide = this.numberofSlides - 1;
     }
   }
-  isVisible(index:number){
-    if(this.currentSlide == index){
+  isVisible(index: number) {
+    if (this.currentSlide == index) {
       return true;
     }
     return false;
   }
-  constructor(private API:ApiService) { }
+  constructor(private API: ApiService) { }
   ngOnInit(): void {
-    this.API.getData("/api/news").then((value)=> {
+    this.API.getData("/api/news").then((value) => {
       this.newses = value;
       this.numberofSlides = this.newses.length;
-    }) 
+    })
   }
 }

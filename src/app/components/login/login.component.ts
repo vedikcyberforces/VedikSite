@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   isModalActive = false;
   isLogin = false;
   isWrongActive = false;
+  isLoging = false
   constructor(private AUTH: AuthService, private router: Router) {
     this.AUTH.isLoggedIn().then((val) => {
       if (val) {
@@ -21,13 +22,14 @@ export class LoginComponent implements OnInit {
     })
   }
 async  Login(data: any) {
+  this.isLoging = true;
     this.AUTH.Login(data).then(()=>{
       this.AUTH.isLoggedIn().then((val)=>{
         if(val){
-          this.isModalActive = true;
           location.reload()
         }
         else{
+          this.isLoging = false;
           this.isWrongActive = true
         }
       })

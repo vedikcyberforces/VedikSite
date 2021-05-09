@@ -9,32 +9,46 @@ import { ApiService } from 'src/app/services/api.service';
 export class JoinrequestsComponent implements OnInit {
 
   requests: any
-  isInfoActive: any
+  isInfoActive = false
+  isLoadingActive = false
   currentRequest = {
     "firstname": "",
     "lastname": "",
     "username": "",
     "email": "",
     "phone": "",
-    "id": ""
+    "_id": "",
+    "time":""
   }
   constructor(private API: ApiService) { }
 
   ngOnInit(): void {
-    this.API.getData("/auth/join").then((value) => this.requests = value)
+    this.API.postForm("/auth/join/requests", {"token":localStorage.getItem('token')}).then((value) => this.requests = value)
   }
   toggler() {
     this.isInfoActive = !this.isInfoActive;
+  }
+  togglerLoading(){
+    this.isLoadingActive = !this.isLoadingActive
   }
   openModal(request: any) {
     console.log(request)
     this.currentRequest = request
     this.toggler();
   }
-  Accept(id:string){
-
+  
+  Accept(_id:any){
+    this.isLoadingActive = true
+    this.API.postForm("/auth/join/request", {"token":localStorage.getItem('token'), "status":"A", "id":_id}).then(() => {
+      this.isLoadingActive = false;
+      location.reload()
+    })
   }
-  Reject(id:string){
-    
+  Reject(_id:any){
+    this.isLoadingActive =true
+    this.API.postForm("/auth/join/request", {"token":localStorage.getItem('token'), "status":"R", "id":_id}).then((value) => {
+        this.isLoadingActive = false
+        location.reload()
+    })
   }
 }
