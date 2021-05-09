@@ -1,0 +1,44 @@
+<div class="columns is-centered is-multiline">
+
+
+    <!--- Project Card --->
+    <div class="column is-3 is-mobile">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Web Application
+                </p>
+            </header>
+            <div class="card-image">
+                <figure class="image is-4by3 is-rounded">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png"
+                                alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">Project Name</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    Project Description.
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a (click)="modal.ProjectDescription()" class="card-footer-item">Read More</a>
+                <app-projectmodel #modal></app-projectmodel>
+            </footer>
+        </div>
+    </div>
+    <!--- End Project Card --->
+
+
+
+</div>

@@ -1,0 +1,64 @@
+<div class="modal" [ngClass]="{'is-active' : isModalActive}">
+    <div class="modal-background" (click)="toggler()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Project Description</p>
+            <button class="delete" aria-label="close" (click)="toggler()"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="columns notification is-vcentered has-text-weight-bold">
+                <div class="column is-12">
+                    <div class="media">
+                        <div class="columns">
+                            <div class="column">
+                                <figure class="image is-64x64 center">
+                                    <img src="assets/vcf.png" alt="Project Icon">
+                                </figure>
+                            </div>
+                            <div class="column is-11">
+                                <p class="title py-5 has-text-centered" id="heading">Project Name</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--- Project Description --->
+                    <p class="subtitle py-5" id="info">Project Description</p>
+                    <!--- End Project Description --->
+
+                    <!--- Project Image Carousel --->
+
+                    <div class="media notification is-success is-light" style="margin-bottom: 0;">
+                        <div class="media-left"><button class="button" (click)="loadPreviousSlide()"><span><i
+                                        class="fa fa-arrow-left" aria-hidden="true"></i></span></button></div>
+                        <div class="media-content has-text-centered">
+                            <p class="title" id="P-name"><u>Project Name</u></p>
+                        </div>
+                        <div class="media-right"><button class="button" (click)="loadNextSlide()"><span><i
+                                        class="fa fa-arrow-right" aria-hidden="true"></i></span></button></div>
+                    </div>
+                    <div class="box has-text-centered">
+                        <div *ngFor="let image of data; let i = index">
+                            <div class="columns" *ngIf="isVisible(i)">
+                                <div class="column is-12 is-vcentered" style="height: 200px;">
+                                    <figure class="image is-128x128" style="margin: auto auto;">
+                                        <img src={{image}} alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--- End Project Image Carousel --->
+
+                    <!--- Project URL --->
+                    <p class="subtitle py-5 is-4">Project Url:- <a href="#"
+                            class="link-url has-text-warning">Project</a></p>
+                    <!--- End Project URL --->
+                </div>
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+            <p class="subtitle">Developed by</p>
+            <div class="tag is-warning mx-2">Developer Name</div>
+          </footer>
+    </div>
+</div>
