@@ -22,6 +22,7 @@ import { WebProjectsComponent } from './components/web-projects/web-projects.com
 import { MobileComponent } from './components/mobile/mobile.component';
 import { DesktopComponent } from './components/desktop/desktop.component';
 import { ProjectmodelComponent } from './components/projectmodel/projectmodel.component';
+import { ProfileComponent } from './components/login/profile/profile.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ProjectmodelComponent } from './components/projectmodel/projectmodel.co
     WebProjectsComponent,
     MobileComponent,
     DesktopComponent,
-    ProjectmodelComponent
+    ProjectmodelComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { JoinComponent } from './components/join/join.component';
 import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/login/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"about", component: AboutComponent},
   {path:"join", component:JoinComponent},
   {path:"admin/joinrequests", component:JoinrequestsComponent},
-  {path:"projects", component:ProjectsComponent}
+  {path:"projects", component:ProjectsComponent},
+  {path:"profile", component:ProfileComponent}
 ];
 
 @NgModule({
