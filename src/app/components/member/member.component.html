@@ -6,7 +6,7 @@
     </div>
 
     <!-- Member card -->
-    <div class="column notification box is-white is-one-quarter-widescreen is-one-third-destkop is-full-mobile member" *ngFor = "let member of member_data" >
+    <div class="column notification box is-white is-one-quarter-widescreen is-one-third-destkop is-full-mobile member" [routerLink]="['profile']" *ngFor = "let member of member_data" >
         <div class="media">
             <div class="media-left">
                 <figure class="image is-64x64">
@@ -15,9 +15,7 @@
                 </figure>
             </div>
             <div class="media-content">
-                <a href="#" class="title button is-white is-4 has-text-link-dark my-0">
-                    <p class="content my-0">{{member.firstname + ' ' + member.lastname}}</p>
-                </a>
+                    <a class="content my-0 title is-4" [routerLink]="['profile']">{{member.firstname + ' ' + member.lastname}}</a>
                 <div class="content mt-2">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, commodi.</p>
                 </div>
