@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,9 +10,18 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent implements OnInit {
   isActive = false;
   isLogin = false;
-  constructor(private AUTH: AuthService) {
+
+  hideNav(){
+    this.isActive = false;
+  }
+
+  constructor(private AUTH: AuthService, private router : Router) {
     this.AUTH.isLoggedIn().then((val) => {
       this.isLogin = val;
+    })
+
+    this.router.events.subscribe(()=>{
+      this.isActive = false;
     })
   }
   async ngOnInit() {
@@ -19,4 +29,5 @@ export class NavbarComponent implements OnInit {
       this.isLogin = val;
     })
   }
+
 }
