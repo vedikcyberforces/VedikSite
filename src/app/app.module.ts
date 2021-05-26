@@ -23,6 +23,8 @@ import { MobileComponent } from './components/mobile/mobile.component';
 import { DesktopComponent } from './components/desktop/desktop.component';
 import { ProjectmodelComponent } from './components/projectmodel/projectmodel.component';
 import { ProfileComponent } from './components/login/profile/profile.component';
+import { ArtComponent } from './components/art/art.component';
+
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { ProfileComponent } from './components/login/profile/profile.component';
     MobileComponent,
     DesktopComponent,
     ProjectmodelComponent,
-    ProfileComponent
+    ProfileComponent,
+    ArtComponent
   ],
   imports: [
     BrowserModule,
