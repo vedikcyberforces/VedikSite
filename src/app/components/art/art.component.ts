@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtComponent implements OnInit {
 
+  zoom(sender:any){
+    console.log(sender)
+  }
+
   constructor() { }
 
   ngOnInit(): void {
