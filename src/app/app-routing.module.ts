@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { ArtComponent } from './components/art/art.component';
 import { HomeComponent } from './components/home/home.component';
 import { JoinComponent } from './components/join/join.component';
 import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joinrequests.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"join", component:JoinComponent},
   {path:"admin/joinrequests", component:JoinrequestsComponent},
   {path:"projects", component:ProjectsComponent},
-  {path:"profile", component:ProfileComponent}
+  {path:"profile", component:ProfileComponent},
+  {path:"art", component:ArtComponent}
 ];
 
 @NgModule({
