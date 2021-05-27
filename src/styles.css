@@ -5,3 +5,11 @@
     font-family: Ubuntu;
     font-weight: 400;
 }
+
+*::-webkit-scrollbar{
+    background: white;
+}
+*::-webkit-scrollbar-thumb{
+    background: rgb(255, 223, 163);
+    border-radius: 10px;
+}
