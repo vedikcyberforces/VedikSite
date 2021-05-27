@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  isChat : boolean = false;
+
+  constructor(private route : Router) {
+    route.events.subscribe(()=>{
+      const state = localStorage.getItem("isChat")
+      this.isChat = state === 'true' ? true : false;
+    })
+   }
 
   ngOnInit(): void {
   }
