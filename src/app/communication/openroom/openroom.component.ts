@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpenroomComponent implements OnInit {
 
-  constructor() { }
-
+  constructor() {
+    localStorage.setItem("isChat", "true");
+   }
+  
   ngOnInit(): void {
   }
 
