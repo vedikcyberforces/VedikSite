@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OpenroomComponent } from './communication/openroom/openroom.component';
 import { AboutComponent } from './components/about/about.component';
 import { ArtComponent } from './components/art/art.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"admin/joinrequests", component:JoinrequestsComponent},
   {path:"projects", component:ProjectsComponent},
   {path:"profile", component:ProfileComponent},
-  {path:"art", component:ArtComponent}
+  {path:"art", component:ArtComponent},
+  {path:"openroom", component:OpenroomComponent}
 ];
 
 @NgModule({
