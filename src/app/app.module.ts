@@ -24,6 +24,7 @@ import { DesktopComponent } from './components/desktop/desktop.component';
 import { ProjectmodelComponent } from './components/projectmodel/projectmodel.component';
 import { ProfileComponent } from './components/login/profile/profile.component';
 import { ArtComponent } from './components/art/art.component';
+import { OpenroomComponent } from './communication/openroom/openroom.component';
 
 
 
@@ -47,7 +48,8 @@ import { ArtComponent } from './components/art/art.component';
     DesktopComponent,
     ProjectmodelComponent,
     ProfileComponent,
-    ArtComponent
+    ArtComponent,
+    OpenroomComponent
   ],
   imports: [
     BrowserModule,
