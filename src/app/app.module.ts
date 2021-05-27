@@ -55,9 +55,8 @@ import { OpenroomComponent } from './communication/openroom/openroom.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
