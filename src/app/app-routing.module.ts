@@ -9,9 +9,9 @@ import { JoinrequestsComponent } from './components/joinrelated/joinrequests/joi
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/login/profile/profile.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { TaskComponent } from './page/task/task.component';
 
 const routes: Routes = [
-  {path:"", component: HomeComponent},
   {path:"", component: HomeComponent},
   {path:"login", component: LoginComponent},
   {path:"about", component: AboutComponent},
@@ -20,7 +20,8 @@ const routes: Routes = [
   {path:"projects", component:ProjectsComponent},
   {path:"profile", component:ProfileComponent},
   {path:"art", component:ArtComponent},
-  {path:"openroom", component:OpenroomComponent}
+  {path:"openroom", component:OpenroomComponent},
+  {path:"task", component:TaskComponent}
 ];
 
 @NgModule({

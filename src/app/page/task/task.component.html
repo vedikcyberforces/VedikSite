@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <p class="title">
+        Choose Your Task
+    </p>
+    <p class="subtitle">
+        On This page you will get to choose 1 tasks from the list below.
+        finish it on time and send the github link to my mail himyjangid@gmail.com and I will give you a reward.
+    </p>
+    <!-- print tasks list -->
+    <ol>
+        <li *ngFor="let task of tasks">
+            <p class="title is-4">{{task.title}}</p>
+            <p class="subtitle is-6">{{task.description}}</p>
+            
+        </li>
+    </ol>
+
+</div>

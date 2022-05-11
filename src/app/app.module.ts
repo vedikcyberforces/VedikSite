@@ -25,6 +25,7 @@ import { ProjectmodelComponent } from './components/projectmodel/projectmodel.co
 import { ProfileComponent } from './components/login/profile/profile.component';
 import { ArtComponent } from './components/art/art.component';
 import { OpenroomComponent } from './communication/openroom/openroom.component';
+import { TaskComponent } from './page/task/task.component';
 
 
 
@@ -49,7 +50,8 @@ import { OpenroomComponent } from './communication/openroom/openroom.component';
     ProjectmodelComponent,
     ProfileComponent,
     ArtComponent,
-    OpenroomComponent
+    OpenroomComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
